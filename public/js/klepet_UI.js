@@ -1,24 +1,23 @@
 function divElementEnostavniTekst(sporocilo) {
   var jeSmesko = sporocilo.indexOf('http://sandbox.lavbic.net/teaching/OIS/gradivo/') > -1;
-<<<<<<< HEAD
-  var jeVideo = sporocilo.match(new RegExp(/https?:\/\/www\.youtube\.com\/watch\?v=\S+/,'g'));
-=======
+
+var jeVideo = sporocilo.match(new RegExp(/https?:\/\/www\.youtube\.com\/watch\?v=\S+/,'g'));
+
    var jeSlika = sporocilo.indexOf('<img') > -1;
->>>>>>> slike
+
   if (jeSmesko) {
     sporocilo = sporocilo.replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace('&lt;img', '<img').replace('png\' /&gt;', 'png\' />');
     return $('<div style="font-weight: bold"></div>').html(sporocilo);
   } 
-<<<<<<< HEAD
   else if (jeVideo) {
      return $('<div style="font-weight: bold"></div>').html(sporocilo);
   }
-=======
+
   
   else if (jeSlika) {
     return $('<div style="font-weight: bold"></div>').html(sporocilo);
    }
->>>>>>> slike
+
   else {
     return $('<div style="font-weight: bold;"></div>').text(sporocilo);
   }
@@ -31,11 +30,10 @@ function divElementHtmlTekst(sporocilo) {
 function procesirajVnosUporabnika(klepetApp, socket) {
   var sporocilo = $('#poslji-sporocilo').val();
   sporocilo = dodajSmeske(sporocilo);
-<<<<<<< HEAD
   sporocilo = dodajVideo(sporocilo);
-=======
+
   sporocilo = obravnavaslike(sporocilo);
->>>>>>> slike
+
   var sistemskoSporocilo;
 
   if (sporocilo.charAt(0) == '/') {
@@ -121,7 +119,6 @@ $(document).ready(function() {
       $('#seznam-uporabnikov').append(divElementEnostavniTekst(uporabniki[i]));
     }
   });
-<<<<<<< HEAD
   $('#seznam-uporabnikov div').click(function() {
       document.querySelector('#poslji-sporocilo').value = '/zasebno \"' + $(this).text() + "\" ";
       $('#poslji-sporocilo').focus();
@@ -137,14 +134,14 @@ $(document).ready(function() {
    });
  
  
-=======
+
    $('#seznam-uporabnikov div').click(function() {
       document.querySelector('#poslji-sporocilo').value = '/zasebno \"' + $(this).text() + "\" ";
        $('#poslji-sporocilo').focus();
        
      });
 
->>>>>>> zasebna
+
   setInterval(function() {
     socket.emit('kanali');
     socket.emit('uporabniki', {kanal: trenutniKanal});
@@ -175,7 +172,6 @@ function dodajSmeske(vhodnoBesedilo) {
   }
   return vhodnoBesedilo;
 }
-<<<<<<< HEAD
 function dodajVideo(vhodnoBesedilo){
   var izraz=(/https?:\/\/www\.youtube\.com\/watch\?v=\S+/,'g');
   var video=vhodnoBesedilo.match(izraz);
@@ -185,7 +181,7 @@ function dodajVideo(vhodnoBesedilo){
   return vhodnoBesedilo;
 
 }
-=======
+
 function obravnavaslike(vhodnoBesedilo) {
 var j= /(https?:\/\/.+?(?:.(?:png|jpg|gif)))/gi;
  var slikicki=vhodnoBesedilo.match(j);
@@ -202,4 +198,4 @@ var j= /(https?:\/\/.+?(?:.(?:png|jpg|gif)))/gi;
  }
 
  
->>>>>>> slike
+
