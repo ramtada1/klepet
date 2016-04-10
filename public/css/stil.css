@@ -39,7 +39,11 @@ a {
   width: 15%;
 }
 
+<<<<<<< HEAD
 #seznam-kanalov div,  #seznam-uporabnikov div {
+=======
+#seznam-kanalov div, #seznam-uporabnikov div {
+>>>>>>> zasebna
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
@@ -57,7 +61,11 @@ a {
 #pomoc {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+<<<<<<< HEAD
 .slika {
   width:200px;
    padding-left: 20px;
  } 
+=======
+
+>>>>>>> zasebna

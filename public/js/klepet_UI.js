@@ -121,6 +121,7 @@ $(document).ready(function() {
       $('#seznam-uporabnikov').append(divElementEnostavniTekst(uporabniki[i]));
     }
   });
+<<<<<<< HEAD
   $('#seznam-uporabnikov div').click(function() {
       document.querySelector('#poslji-sporocilo').value = '/zasebno \"' + $(this).text() + "\" ";
       $('#poslji-sporocilo').focus();
@@ -136,6 +137,14 @@ $(document).ready(function() {
    });
  
  
+=======
+   $('#seznam-uporabnikov div').click(function() {
+      document.querySelector('#poslji-sporocilo').value = '/zasebno \"' + $(this).text() + "\" ";
+       $('#poslji-sporocilo').focus();
+       
+     });
+
+>>>>>>> zasebna
   setInterval(function() {
     socket.emit('kanali');
     socket.emit('uporabniki', {kanal: trenutniKanal});
